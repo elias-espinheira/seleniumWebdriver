@@ -9,6 +9,8 @@ Receita para criar projetos - framework cucumber-js com Selenium
 7> Change Script -> test for > "node_modules/.bin/cucumber-js -f @cucumber/pretty-formatter features/* --format html:cucumber-report.html "
 8> Setting features and JavaScripts Test Cases (TC) with selenium webdriver
 
+9) On package.jon add >  "test": "node_modules/.bin/cucumber-js -f @cucumber/pretty-formatter features/* --format html:cucumber-report.html"
+
 To execute just to insert "npm test" on terminal em click enter
 
 
