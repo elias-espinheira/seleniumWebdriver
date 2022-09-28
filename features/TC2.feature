@@ -1,7 +1,8 @@
-Feature: Search
+Feature: check ultima school 
 
-    Scenario: Search any
+    Scenario: deny signing up unavailable phone number
 
-    Given I visit publicazo homepage
-    When I search for teste
-    Then I should see the results
+    Given I visit ultima school webpage
+    When i go into "cursos"
+    Then I should see "Escolha o curso que mais combina com você"
+

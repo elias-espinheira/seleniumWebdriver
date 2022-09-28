@@ -22,21 +22,23 @@ let driver = new webdriver.Builder()
 //          .build();
 
 
-Given('I visit publicazo homepage', {timeout: 15 * 1000}, async () => {    
+Given('I visit ultima school webpage', {timeout: 15 * 1000}, async () => {    
     
-    await driver.get("http://publicazo.insprak.com/")
+    await driver.get("https://www.ultima.school/")
     
     
           });
 
-When('I search for teste', async () => {
-    await driver.findElement(By.id("search")).sendKeys("teste")
-    await driver.findElement(By.name("commit")).click()
+When('i go into "cursos"', async () => {
+    await driver.manage().window().setRect({ width: 1014, height: 728 })
+    await driver.findElement(By.css(".hp-cursos__title")).click()
+    
           });
 
-Then('I should see the results', async () => {
+Then('I should see "Escolha o curso que mais combina com você"', async () => {
     
-    assert(await driver.findElement(By.css(".col-md-4:nth-child(1) a")).getText() == "Aulas de Psicanalise")
+    assert(await driver.findElement(By.css(".hp-cursos__title")).getText() == "Escolha o curso que mais combina com você")
+    
     //===============
 
     await driver.quit()
